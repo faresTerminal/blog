@@ -159,10 +159,10 @@ MESSAGE_TAGS = {
 DEFAULT_FROM_EMAIL = 'GRH Site <noreply@host.com>'
 EMAIL_USE_TLS=True
 EMAIL_HOST='smtp.gmail.com'
-EMAIL_HOST_USER='grhsitedz@gmail.com'
+EMAIL_HOST_USER='email@demain.com'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
-EMAIL_HOST_PASSWORD='GRH1010#@'
+EMAIL_HOST_PASSWORD='password'
 EMAIL_PORT=587
 
 
