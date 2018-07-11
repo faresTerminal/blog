@@ -1,0 +1,139 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'avatar1.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'normalize.css' %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet"> 
+	<script type="text/javascript" src="{% static 'jquery-3.3.1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'myscript.js' %}"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.8.2.js"></script>
+
+   
+    <!-- display image befor uploading -->
+    <script type="text/javascript">
+    	 function readimg(input){
+           if(input.files && input.files[0]){
+              var reader = new FileReader();
+              reader.onload = function (e){
+                   $('#idimg').attr('src', e.target.result);
+              };
+              reader.readAsDataURL(input.files[0]);
+            }
+          }
+
+
+
+
+    </script>
+    
+</head>
+<body>
+ 
+    <!-- container -->
+    <div class="container">
+    <!-- parent div -->	
+	
+		<div class=" more">
+			<h1>يجب عليك إضافة هذه المعلومات حتى يتسنى لك تصفح بي حسابك</h1>
+			<h2>Add More</h2>
+			{% block content %}
+			<form class="first_list"  action="" method="POST" enctype="multipart/form-data">{% csrf_token %}
+			<li>
+			<div class="about_me">
+				<h4>add Boi</h4>
+				 <div class="more_button2">
+				 	<h2>add boi</h2>
+				 	
+				 </div>
+				<ul>
+					
+					<li><textarea name="details" placeholder="اكتب عبارات تليق بالقارئ"></textarea></li>
+					
+				</ul>
+				
+			</div>
+		    </li>
+		    <li>
+			<div class="add_more">
+				<h4>add Details</h4>
+				 <div class="more_button">
+				 	<h2>add more here</h2>
+				 	
+				 </div>
+				 <ul class="info">
+				 	<li><h3>first name: <input type="text" name="firstname"></h3></li>
+				 	<li><h3>last name: <input type="text" name="lastname"></h3></li>
+				 	<li><h3>age: <input type="text" name="age"></h3></li>
+				 	<li><select name="gender">
+				 		<option>Male</option>
+				 		<option>female</option>
+				 	</select></li>
+
+				 	<li><h3>section: <input type="text" name="section"></h3></li>
+				 	<li><h3>level: <input type="text" name="level"></h3></li>
+				 	
+				 
+				   
+				  </ul>
+				 
+
+				
+			</div>
+		    </li>
+		    <li>
+			<div class="edit">
+				<h6>add Avatar</h6>
+				 <div class="more_button1">
+				 	<h2>change password</h2>
+				 	
+				 </div>
+				<ul class="pass">
+					<li><img id="idimg" src=""></li>
+				 	<li>
+                    <label for="idupload"   class="label"><i id="i" class="fas fa-image"></i> حمل صورة </label>
+                   <input type="file"  name="profile_picture" id="idupload" onchange ="readimg(this);">
+                   
+                    </li>
+                   
+				 	
+				</ul>
+
+				
+			</div>
+	    	</li>
+
+	    	<input type="submit" name="" value="Save">
+
+	     	</form>
+	     	{% endblock %}
+			
+		</div>
+		<!-- end More -->
+
+	
+	</div>
+	<!-- end container-->
+
+
+	 
+
+
+
+
+
+
+
+
+
+
+
+		
+	
+	
+
+</body>
+</html>

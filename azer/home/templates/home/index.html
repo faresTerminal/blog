@@ -1,0 +1,431 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'index211.css' %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet"> 
+
+    <link rel="stylesheet" type="text/css" href="{% static 'jquery.bxslider.css' %}">
+    
+
+    <script type="text/javascript" src="{% static 'jquery-3.3.1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'jquery.bxslider.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'myscript4.js' %}"></script>
+
+	<title>
+		
+	</title>
+</head>
+<body>
+  <!-- add message succes for comment -->
+   {% if messages %}
+    <div class="msgs">
+        {% for message in messages %}
+        {%if "comment" in message.tags %}
+          <p> {{message}} </p>   
+        {%endif%}  
+        {% endfor %}
+    </div>
+    {% endif %} 
+    <!-- end message -->
+
+
+  <div class="container">
+    <div class="logo">
+    	<i id="nav" class="fas fa-bars"></i>
+       <h1><img src="{% static 'logo1.jpg' %}"> إدارة الموارد البشرية </h1>
+       <h2>فضاء طالب الجامعة</h2>
+
+      
+    </div>
+    
+  </div>
+  <!-- create small nav barre -->
+  
+    <div class="nav">
+      <ul>
+        <li>
+          <i class="fas fa-pencil-alt"></i>
+          <a href="#" data-value='second'>فضاء الطالب</a>
+
+          
+        </li>
+        <li>
+          <i class="fas fa-cloud-upload-alt"></i>
+          <a href="#" data-value='third'>مركز التحميل</a>
+          
+        </li>
+        <li>
+          <i class="fas fa-envelope-open"></i>
+          <a href="#">اتصل بنا</a>
+          
+        </li>
+        
+      </ul>
+      
+      
+
+      
+  </div>
+  <!-- create navbar -->
+    
+      <div class="first">
+        <div class="overly">
+
+        <!-- create a paragraph -->
+       <div class="paragraph">
+
+        <li>
+          <i class="fas fa-file-alt"></i>
+        <h1>إدارة الموارد البشريّة</h1>
+        
+        </li>
+        <p>
+          تشير الموارد البشرية إلى الأشخاص العاملين في المنظمات والمؤسسات وتهتم إدارة الموارد البشرية بإدارة هذه الأشخاص من خلال أساليب وإستراتيجيات معينة تعمل على رفع أداء الموظفين وحل مشاكل العمل وتحقيق المنظمة لأهدافها المنشودة، وتقع مسئولية هذه الإدارة على عاتق استشاريين الموارد البشرية إلى جانب المديرين التنفيذين العاملين بالمنظمة.
+          
+        </p>
+         
+       </div>
+       <!-- create slid barre -->
+      
+        
+         
+    
+
+     <!-- create signup and sig in -->
+
+
+       
+        <div class="sigin">
+
+
+            <div class="tit">
+            <i class="fas fa-user-check"></i>
+              <h1>تسجيل الدخول</h1>
+            </div>
+             {% block content %}
+             
+            <form class="form" action="/auth/" method="POST">{% csrf_token %}
+                <li>
+                   
+                  <!-- check if password and username True via message -->
+                  {% if messages %}
+                  <div class="messages">
+                  {% for message in messages %}
+                   {%if "signup" in message.tags %}
+                     <p> {{message}} </p>  
+                   {%endif%}  
+                  {% endfor %}
+                  </div>
+                 {% endif %} 
+                 <!--end message -->
+
+                </li>
+                <li>
+                    
+                    <input type="text" name="username" placeholder="اسم المستخدم">
+                    <i class="fas fa-user"></i>
+                </li>
+               
+                <li>
+                    
+                    <input type="password" name="password"  placeholder="كلمة السر">
+                    <i class="fas fa-unlock-alt"></i>
+                </li>
+              
+               
+                
+                  <a href="/password_reset">نسيت كلمة السر</a>
+                  
+                
+                <input type="submit" name="" value="دخول">
+            </form>
+            
+
+             <a class="add_link" href="/register"><i class="fas fa-user-plus"></i> حساب جديد</a>
+             
+
+        </div>
+        </div>
+
+       </div>
+     
+
+     <!-- create fada2 takib -->
+
+     <div class="container" >
+        <div class="second" id="second">
+          
+           <!-- create a paragraph -->
+       <div class="paragraph">
+
+        <li>
+          <i class="fas fa-graduation-cap"></i>
+        <h1>فصاء الطالب</h1>
+        
+        </li>
+        <p>
+         الهدف الرئيسي للموقع هو خلق فضاء تعليمي غني و مصدر لا نهائي لتخصص إدارة الموارد البشرية و مستويات التعليم
+           لن يتحقق هذا الهدف إلا بتضافر جهود الأساتذة والطلبة و ذلك بالمشاركة و نشر أكبر عدد ممكن من الملفات و المعلومات الدراسية
+          
+        </p>
+        <a href="/login"> لنستفد معا </a>
+        
+         
+       
+         
+       </div>
+
+       <!-- create upload notice -->
+       <div class="paragraph1">
+
+        <li>
+          <i class="fas fa-book"></i>
+        <h1>الدروس و البحوث</h1>
+        
+        </li>
+        <p>
+          يعتبر البحث العلمي أهم أداة لمعرفة حقائق الكون و الإنسان و الحياة، و يتيح البحث العلمي للباحث
+          الاعتماد على نفسه في اكتساب المعلومات، كما أنه يسمح للباحث الاطلاع على مختلف المناهج واختيار
+           الأفضل منها ويجعل من الباحث شخصيةً مختلفة من حيث التفكير والسلوك، والانضباط، والحركة ..
+          تأويل نتائج البحث. التطبيق العملي لنتائج البحث. الخدمة المثبتة في المكتبة. البحث الشخصي وذلك لإثراء مكتسباتك العلمية وليس لتقديمها على شكل بحوث جاهزة في الجامعة
+        </p>
+        <p>
+        في الأسفل توجد واجهة لتحميل الدروس و البحوث من جهازك, كما يمكنك زيارة الصفحة الخاصة بهم و هي مقسمة إلى اثنين<br/><span>واجهة خاصة بالسنة أولى ماستر *</span><br/><span>واجهة خاصة بالسنة ثانية ماستر *</span>
+          
+        </p>
+        
+         
+       </div>
+       
+        
+      
+
+          </div>
+        </div> 
+       
+     
+
+     <!-- create panel upload -->
+     <div class="container">
+      <div class="panel" id="third">
+         <h2><i class="fas fa-cloud-upload-alt"></i> مركز التحميل</h2>
+          <div class="pl1">
+            <h1>السنة أولى ماستر</h1>
+
+            
+              <ul class="list1">
+                <li><h2>الدروس</h2></li>
+                <form class="child-list" action="/cours1/" method="post" enctype="multipart/form-data">{% csrf_token %}
+                  <h3>إختر المقياس مناسب</h3>
+                  <select class="bery" name="title">
+                        <option>التمكين</option>
+                        <option>إدارة المعارف</option>
+                        <option>الهندسة الوظيفية</option>
+                        <option>الإتصال و التحرير الإداري</option>
+                        <option>لغة أجنبية 1</option>
+                        <option>قانون العمل</option>
+                        <option>نظام معلومات الموارد البشرية</option>
+                        <option>إدارة التغير</option>
+                        <option>إدارة المخاطر الاجتماعية</option>
+                        <option>نظم الأجور و الحوافز</option>
+                        <option>المقاولاتية</option>
+                        <option>لغة أجنبية 2</option>
+                        <option>إدارة الابتكار</option>
+                        <option>القانون الاساسي للوظيفة العمومية</option>
+                    </select>
+                    <h3>إختر العنوان المناسب</h3>
+                    <input type="text" name="sub_title" >
+                    <label for="file" class="label_in">ملف من جهازك</label>
+                    <input type="file" name="file" id="file">
+                    <i class="fas fa-upload"></i>
+                    <input type="submit" name="file" value="تحميل">
+
+                  
+                </form>
+                <li class="show">
+                  <p>في الأعلى<i class="far fa-hand-point-up"></i> بضغطك على كلمة "الدروس" سوف تظهر لك لوحة التحميل, التي تمكنك من مشاركة الدروس مع الجميع</p>
+                  <p>في الأسفل<i class="fas fa-hand-point-down"></i> توجد صفحة خاصة بالملفات او الدروس المحملة</p>
+                  <a href="/home/cours/">صفحة الدروس</a>
+                </li>
+                
+              </ul>
+
+
+              <ul class="list2">
+                <li><h2>البحوث</h2></li>
+                <form class="child-list" action="/cours_s1/" method="post" enctype="multipart"> {% csrf_token %}
+                  
+                   <h3>إختر المقياس مناسب</h3>
+                  <select class="bery" name="title_cherche_s1">
+                        <option>إدارة المعارف</option>
+                        <option>الهندسة الوظيفية</option>
+                        <option>نظام معلومات الموارد البشرية</option>
+                        <option>إدارة التغير</option>
+                        <option>إدارة المخاطر الاجتماعية</option>
+                        <option>نظم الأجور و الحوافز</option>
+
+                    </select>
+                    <h3>إختر العنوان المناسب</h3>
+                    <input type="text" name="sub_title_cherche_s1" >
+                     <label for="file1" class="label_in">ملف من جهازك</label>
+                    <input type="file" name="file_s1" id="file1">
+                    <i class="fas fa-upload"></i>
+                    <input type="submit" name="" value="تحميل">
+                </form>
+                 <li class="show">
+                  <p>في الأعلى<i class="far fa-hand-point-up"></i> بضغطك على كلمة "البحوث" سوف تظهر لك لوحة التحميل, التي تمكنك من مشاركة البحوث مع الجميع</p>
+                  <p>في الأسفل<i class="fas fa-hand-point-down"></i> توجد صفحة خاصة بالملفات او البحوث المحملة</p>
+                  <a href="/home/cours/">صفحة البحوث</a>
+                </li>
+                
+              </ul>
+            
+          </div>
+
+
+          <div class="pl2">
+            <h1>السنة الثانية ماستر</h1>
+              <ul class="list1">
+                <li><h2>الدروس</h2></li>
+                <form class="child-list" action="/cours12/" method="post" enctype="multipart">{% csrf_token %}
+                  <h3>إختر المقياس مناسب</h3>
+                  <select class="bery" name="title">
+                        <option>التمكين</option>
+                        <option>إدارة المعارف</option>
+                        <option>الهندسة الوظيفية</option>
+                        <option>الإتصال و التحرير الإداري</option>
+                        <option>لغة أجنبية 1</option>
+                        <option>قانون العمل</option>
+                        <option>نظام معلومات الموارد البشرية</option>
+                        <option>إدارة التغير</option>
+                        <option>إدارة المخاطر الاجتماعية</option>
+                        <option>نظم الأجور و الحوافز</option>
+                        <option>المقاولاتية</option>
+                        <option>لغة أجنبية 2</option>
+                        <option>إدارة الابتكار</option>
+                        <option>القانون الاساسي للوظيفة العمومية</option>
+                    </select>
+                    <h3>إختر العنوان المناسب</h3>
+                    <input type="text" name="sub_title"  >
+                     <label for="file1" class="label_in">ملف من جهازك</label>
+                    <input type="file" name="file1" id="file1">
+                    <i class="fas fa-upload"></i>
+                    <input type="submit" name="" value="تحميل">
+                  
+                </form>
+                 <li class="show">
+                  <p>في الأعلى<i class="far fa-hand-point-up"></i> بضغطك على كلمة "الدروس" سوف تظهر لك لوحة التحميل, التي تمكنك من مشاركة الدروس مع الجميع</p>
+                  <p>في الأسفل<i class="fas fa-hand-point-down"></i> توجد صفحة خاصة بالملفات او الدروس المحملة</p>
+                  <a href="/home/cours2/">صفحة الدروس</a>
+                </li>
+                
+              </ul>
+
+              <ul class="list2">
+                <li><h2>البحوث</h2></li>
+                <form class="child-list" action="/cours_s12/" method="post" enctype="multipart">{% csrf_token %}
+                  
+                   <h3>إختر المقياس مناسب</h3>
+                  <select class="bery" name="title_cherche_s1">
+                        <option>إدارة المعارف</option>
+                        <option>الهندسة الوظيفية</option>
+                        <option>نظام معلومات الموارد البشرية</option>
+                        <option>إدارة التغير</option>
+                        <option>إدارة المخاطر الاجتماعية</option>
+                        <option>نظم الأجور و الحوافز</option>
+
+                    </select>
+                    <h3>إختر العنوان المناسب</h3>
+                    <input type="text" name="sub_title_cherche_s1" >
+                    <label for="file3" class="label_in">ملف من جهازك</label>
+                    <input type="file" name="file_s1" id="file3">
+                    <i class="fas fa-upload"></i>
+                    <input type="submit" name="" value="تحميل">
+                </form>
+                <li class="show">
+                  <p>في الأعلى<i class="far fa-hand-point-up"></i> بضغطك على كلمة "البحوث" سوف تظهر لك لوحة التحميل, التي تمكنك من مشاركة البحوث مع<br/> الجميع</p>
+                  <p>في الأسفل<i class="fas fa-hand-point-down"></i> توجد صفحة خاصة بالملفات او البحوث المحملة</p>
+                  <a href="/home/cours2/">صفحة البحوث</a>
+              </ul>
+            
+          </div>
+        </div>
+      </div>
+       
+    <!-- footer -->
+    
+    <div class="footer">
+      <div class="overly">
+        
+        
+        <div class="col">
+            <h1>لنبقى متصلين <i class="fas fa-sync-alt"></i></h1>
+            <p>لتسهيل مشاركة و تحصيل المعلومات<br/><i class="fab fa-facebook-square"></i> و البيانات بسرعة على صفحة الفيسبوك </p>
+            <span><a href="http://www.facebook.com/groups/258313977897762">GRH السنة الأولى ماستر </a></span>
+            <span><a href="http://www.facebook.com/groups/master2GRH">GRH السنة الثانية ماستر </a></span>
+            <span><a href="http://www.facebook.com/affichage.gestion">....صفحة علوم التسيير </a></span>
+
+           
+            
+        </div>
+        <div class="col">
+
+            <h1>المزيد <i class="fas fa-info-circle"></i></h1>
+
+            <p>مشاركة مجموعة من الملفات و النماذج المتعلقة بالتخصص او سوق العمل</p>
+            <span> <a href="#">تعرف على المزيــــد</a></span>
+            <h1>فضاء الطالب</h1>
+            <p>بعد <a href="/login">تسجيل الدخول</a> يمكنك تحميل و مشاركة البحوث 
+            و الافكار مع أعضاء المجموعة</p>
+
+            
+        </div>
+        
+        <form class="col" action="/comment_user/" method="post">{% csrf_token%}
+            {{ form.as_p}}
+            <h1>قدم تلميحات <i class="fab fa-accusoft"></i></h1>
+            
+            <p> طالب يدروس تخصص إدارة الموارد البشرية<br/>يمكنك تقديم تعليق او توضيح.</p>
+            
+            <input  type="text" name="email"  placeholder="ادخل بريدك الالكتروني" required="">
+            
+            <textarea  name="comment"  placeholder="تعليقك"></textarea>
+            
+            <input type="submit" name="submit" value="أرسل">
+            
+              
+        </form>
+{% endblock %} 
+       <div class="top_footer>">
+       <i id="top" class="fas fa-chevron-circle-up"></i>
+       </div>
+     
+      </div>
+
+      </div> 
+    
+           
+     <div class="end">
+                
+              <p>
+                    
+                   Université , Algerie | Assisté par un <span class="yac"><a href="http://www.facebook.com/django.756859">étudiant</a>  </span> <span>GRH</span>       Copyright &copy; 2018</p>
+
+
+     </div>
+        
+        
+    
+      
+    
+
+
+
+	
+
+</body>
+</html>

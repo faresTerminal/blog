@@ -1,0 +1,191 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'profile7.css' %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet"> 
+	<script type="text/javascript" src="{% static 'jquery-3.3.1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'myscript4.js' %}"></script>
+</head>
+
+<body>
+	 
+	{% block profile %}     
+    <!-- container -->
+    <div class="container">
+    	{% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div >{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}  
+    <div class="logo">
+      			<h2>فضاء الطالب <i class="fas fa-book-open"></i></h2>
+      			<h3>إطلبوا العلمَ لذاتِ العلمِ لا … لشهاداتٍ وآرا بٍ أخرْ</h3>
+            
+            
+      			
+      		</div> 
+   
+
+	<div class="container">
+	<div class="first">
+		<div class="one">
+			<div class="more_info">
+				<h1>More info</h1>
+				<ul>
+					<li class="i"><h2>Firstname: </h2></li>
+					<li class="j"><span>{{ user.firstname }}</span></li>
+					<li class="i"><h2>Lastname: </h2></li>
+					<li class="j"><span>{{ user.lastname }}</span></li>
+					<li class="i"><h2>Age: </h2></li>
+					<li class="j"><span>{{ user.age }}</span></li>
+					<li class="i"><h2>Gender: </h2></li>
+					<li class="j"><span>{{ user.gender}}</span></li>
+					<li class="i"><h2>Section: </h2></li>
+					<li class="j"><span>{{ user.section }}</span></li>
+					<li class="i"><h2>Level: </h2></li>
+					<li class="j"><span>{{ user.level }}</span></li>
+				</ul>
+				
+				
+			</div>
+			<div class="password">
+				<div class="pass1">
+					<h1>change password</h1>
+					<form class="p" action="{% url 'home:change_password' %}" method="post">
+						{% csrf_token%}
+					
+					<li><h3>old password </h3><input type="password" name="old_password"></li>
+				 	<li><h3>new password </h3><input type="password" name="new_password1"></li>
+				 	<li><h3>confirm password </h3><input type="password" name="new_password2"></li>
+
+				 	<div class="save">
+
+				 	<input type="submit" name="" value="Save">
+				    </div>
+
+					
+				    </form>
+{% endblock %}
+
+				    
+				</div>
+
+				
+				
+			</div>
+			
+		</div>
+
+
+
+		<div class="container">
+        <div class="sigin1">
+
+            
+              <h1>منشوراتي</h1>
+            
+
+   {% block content %}
+            <ul class="ul">
+              <li>العنوان</li>
+              <li>تاريخ النشر</li>
+              <li>Action</li>
+            </ul>
+        {% for head in post %}
+            <div class="list">
+
+            <ul>
+                <li>{{ head.title}}</li>
+
+                <li>{{head.date}}</li>
+                <li><a href="delete/{{ head.id }}">Delete</a>|<a href="update/{{ head.id }}">Edit</a></li>
+              </ul>
+              
+
+            </div>
+         {% endfor %}
+
+           <!-- create paginator -->
+     <div class="paginator">
+          <span class="sp1">
+            <span class="sp2">
+          
+          {% if  post.has_next %}
+            <a href="?page={{  post.next_page_number }}">التالي ....</a>
+            </span>
+            {% endif %}
+            
+           الصفحة  {{  post.number}} من {{  post.paginator.num_pages}}
+            
+            <span class="sp3">
+            {% if  post.has_previous %}
+               
+               <a href="?page={{  post.previous_page_number }}">السابقة ....</a>
+            {% endif %}
+            </span>
+           </span> 
+        </div>
+          
+           
+        </div>
+
+   {% endblock %}  
+  
+           
+    </div>
+        
+		<div class="two">
+			
+			<div class="image">
+				
+
+				<ul>
+					<li><h1>{{ user.name }}</h1></li>
+					<li><img src="{{ user.profile_picture.url }}"></li>
+					<li><h2>{{ user.details }}</h2></li>
+				</ul>
+				
+			</div>
+		   
+
+			<div class="info">
+				<h1>About me</h1>
+				<ul>
+					<li><h2>Email: <span>{{ user.name.email }}</span></h2></li>
+					<li><h2>Date joined: <span>{{user.name.date_joined}}</span></h2></li>
+					<li><h2>Last login: <span>{{user.name.last_login}}</span></h2></li>
+				</ul>
+				
+			</div>
+			<div class="link">
+					<h1>More info</h1>
+					<h2>منشوراتك</h2>
+			</div>
+			
+
+			
+		</div>
+
+		
+	</div>
+</div>
+
+  <div class="end">
+
+                
+              <p>
+                    
+                   Université , Algerie | Assisté par un <span class="yac"><a href="http://www.facebook.com/django.756859"> étudiant </a>  </span> <span> GRH </span> <i class="fab fa-facebook-square"></i>  Copyright &copy; 2018</p>
+
+
+
+            </div>
+
+</body>
+</html>

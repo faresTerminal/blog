@@ -1,0 +1,46 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'style-login.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'invalid_login.css' %}">
+	<title></title>
+</head>
+<body>
+<div class="overly">
+<!-- create navigation -->
+    <div class="navbar">
+    	    <div class="container">
+    		<div class=" logo">
+    			<a href=""><h1><span> GRH </span>ماستر إدارة الموارد البشرية </h1></a>
+                <h2>جامعة لونسي علي _العفرون_</h2>
+    			<h3>دروس و بحوث و كل ما يخص التخصص</h3>
+    			
+    		</div>
+    		
+            
+                <!-- create a log div class Empty  -->
+<!-- create a sign up display  -->
+
+<a class="log1" href="/register">حساب جديد</a>
+
+{% block content %}
+
+<div class="answer">
+     <lu class='first'>
+      <li>
+        <p>مرحبا بيك معنا في الموقع اختي اخي الكريم </p>
+      </li>
+      <li>
+        <a href="/loggedin">فضاء الطالب</a>
+        
+      </li>
+     </lu>
+</div>
+
+{% endblock %}
+</div>
+</body>
+</html>

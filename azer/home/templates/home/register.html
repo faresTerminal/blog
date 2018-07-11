@@ -1,0 +1,86 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'register.css' %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet"> 
+	<title>
+		
+	</title>
+</head>
+<body>
+	<!-- create logo -->
+   
+
+    <!-- create title -->
+    <div class="container">
+     <div class="title">
+
+        <h1>فتح حساب جديد على موقع إدارة الموارد البشرية </h1>
+        
+         
+     </div>
+     </div>
+
+     <!-- create signup and sig in -->
+
+       <div class="container">
+        <div class="sigin">
+
+            <div class="tit">
+            <i class="fas fa-user-plus"></i>
+              <h1>حساب جديد</h1>
+            </div>
+            {% block content %}
+            <form class="form" action="/register/" method="POST"> {% csrf_token %}
+                <li>
+                    
+                    <input type="text" name="username" id="id_username" placeholder="اسم المستخدم">
+                    <i class="fas fa-user"></i>
+                </li>
+                <li>
+                    
+                    <input type="text" name="email" id="id_email" placeholder="البريد الالكتروني">
+                    <i class="fas fa-envelope-open"></i>
+                </li>
+                <li>
+                    
+                    <input type="password" name="password1" id="id_password1" placeholder="كلمة السر">
+                    <i class="fas fa-unlock-alt"></i>
+                </li>
+                <li>
+
+                    <input type="password"  name="password2" id="id_password2" placeholder="تأكيد كلمة السر">
+                    <i class="fas fa-unlock-alt"></i>
+                </li>
+                
+
+                <p> بالنقر على "تسجيل" ، فإنك توافق على <a href="/prvc/"> الشروط وسياسة البيانات وسياسة ملفات</a> كما يجيب عليك احترم قواعد التي يسير عليها الموقع, واحترام عناصر المجموعة</p>
+
+                <input type="submit" name="" value="تسجيل">
+            </form>
+              {% endblock %} 
+
+        </div>
+
+        <div class="login">
+            <div class="tit1">
+                <i class="fas fa-user-check"></i>
+
+            <h1>تسجيل الدخول</h1>
+            </div>
+              <p>
+               ان كنت تملك حساب على موقع إدارة الموارد البشرية يمكنك, تسجيل الدخول و تقبل مرورنا العطر
+              </p>
+              <a href="/login">الدخول</a>
+            
+            
+            
+        </div>
+           
+       </div>
+
+</body>
+</html>

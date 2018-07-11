@@ -1,0 +1,152 @@
+*{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+body{
+	padding: 0;
+	margin: 0;
+	background-color: #2f3238;
+
+}
+.container{
+	width: 1200px;
+	margin: auto;
+
+   
+    
+}
+.navbar{
+   
+   
+   
+   width: 100%;
+   z-index: 2;
+   background: none;
+   height: 250px;
+   background:url(15.jpg);background-size: cover;
+
+}
+.overly{
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    z-index: 1;
+    top: 0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 250px;
+    
+    color: white;
+}
+.navbar .logo{
+	text-align: center;
+	width: 100%;
+	height: 100px;
+	margin-top: 100px;
+
+}
+.navbar .logo h1{
+	font-size: 25px;
+	color: #fff;
+	
+	margin-bottom: 1px;
+	text-align: center;
+
+}
+.navbar .logo span{
+	color: #ff8402;
+}
+.navbar .logo h2{
+	font-size: 13px;
+	color: black;
+	display: inline-block;
+	margin-top: 1px;
+	background-color: #ff8402;
+	width: 240px;
+	text-align: center;
+	border-radius: 20px;
+	margin-bottom: 5px;
+	
+
+}
+.user{
+	width: 100%
+}
+.user h1{
+	font-size: 18px;
+	text-align: center;
+	margin-top: 5px;
+}
+
+.bar{
+	width: 100%;
+	background-color: green;
+	height: 80px;
+	
+	
+
+	
+
+}
+.show{
+	width: 98%;
+	background-color: #ccc;
+	height: 500px;
+	border-radius: 15px;
+	margin-top: 20px;
+	margin-left: 1%;
+}
+.show a{
+	text-decoration: none;
+	font-size: 18px;
+	color: white;
+	background-color: #32a0c2;
+	padding: 5px 15px;
+	float: right;
+	border-radius: 10px;
+	margin-top: 10px;
+	margin-right: 50px;
+}
+.add{
+	width: 60%;
+	
+	height: 200px;
+	border-radius: 20px;
+	margin-left: 100px;
+	float: right;
+	margin-top: 80px;
+	
+	
+	
+}
+.add ul{
+	margin: 0;
+	padding: 0;
+	float: right;
+	width: 100%;
+	background-color: #32a0c2;
+	border-radius: 10px;
+}
+.add ul li{
+	list-style: none;
+	margin-left: 10px;
+	display:inline-block;
+	
+	width: 15%;
+}
+.add ul li:last-child{
+	width: 50%;
+	border-left: 1px green;
+}
+.add ul li:first-child{
+	width: 30%;
+	border-left: 1px green;
+}
+.show .add a{
+	width: 100%;
+	text-align: right;
+	height: 50px;
+	background-color: none;
+}

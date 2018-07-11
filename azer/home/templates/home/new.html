@@ -1,0 +1,83 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'new.css' %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'normalize.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'simditor.css' %}" />
+
+     
+	<script type="text/javascript" src="{% static 'jquery-3.3.1.js' %}"></script>
+	<script type="text/javascript" src="{% static 'myscript1.js' %}"></script>
+
+	<script type="text/javascript" src="{% static 'scripts/jquery.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/module.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/hotkeys.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/uploader.js' %}"></script>
+<script type="text/javascript" src="{% static 'scripts/simditor.js' %}"></script>
+<link rel="stylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/static 'default.min.css' %}">
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/static 'highlight.min.js' %}"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+</head>
+<body>
+
+		<div class="navbar"> 
+      		
+      			
+      		
+      		<div class="logo">
+      			<h2>فضاء الطالب <i class="fas fa-book-open"></i></h2>
+      			<h3>إطلبوا العلمَ لذاتِ العلمِ لا … لشهاداتٍ وآرا بٍ أخرْ</h3>
+      			
+      		</div>
+      		
+      	</div>
+
+
+
+        <div class="article">
+        	{% block content %}
+          
+            <form  action="/loggedin/new/publish/" class ="put" method="post" enctype="multipart/form-data">{% csrf_token %}
+             
+               
+
+               <h1>إضافة موضوع جديد</h1>
+               <h3>.تستطيع أن تقدم موضوع جديد أو تفتح نقاش جديد, كما يمكنكا تحميل ملفات من جهزك ومشاركتها معنا</h3>
+                
+               <h4>  <span> {{ articles.auther }} </span>  :دخولك مسجل بإسم </h4>
+               
+               {{ form.as_p }}
+              {{form.media }}
+              
+              
+               
+            
+               <input  type="submit"  value="أنشـــر">
+            </form>
+            {% endblock %}
+            
+
+            
+        </div>
+
+
+        <!-- create small footer -->
+     <div class="end">
+                
+              <p>
+                    
+                   Université , Algerie | Assisté par un <span class="yac"><a href="http://www.facebook.com/django.756859">étudiant</a>  </span> <span>GRH</span> ,       Copyright &copy; 2018</p>
+
+
+            </div>
+          </div>
+
+</body>
+</html>

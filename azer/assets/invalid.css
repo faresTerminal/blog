@@ -1,0 +1,112 @@
+*{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+body{
+	background-color: #3b687a;
+
+}
+.container{
+	width: 1160px;
+	
+
+	margin: auto;
+}
+.title{
+    width: 100%;
+	text-align: center;
+}
+.title h1{
+	font-size: 16px;
+color: white;
+margin-top: 50px;
+text-align: right;
+margin-right: 16%;
+font-family: 'Cairo', sans-serif;
+
+
+}
+.message{
+  background-color: #2c4754;
+  width: 70%;
+  height: 300px;
+  margin-left:5%;
+  
+  border-radius: 15px 0px 0px 15px;
+  box-shadow: 0px 2px 24px 1px #1a3645;
+  margin: auto;
+  margin-top: 25px;
+    
+  
+
+ 
+}
+.message h1{
+	text-align: center;
+font-size: 17px;
+color: white;
+display: inline-block;
+padding-left: 10px;
+font-family: 'Cairo', sans-serif;
+}
+.tit1 {
+ text-align: center;
+border-bottom: 5px #ff8400 solid;
+width: 100%;
+margin: auto;
+}
+
+
+
+.tit1 i{
+
+	font-size: 21px;
+
+color: #ff8400;
+}
+.tit1 i:hover{
+	color: #409090;
+}
+.message p {
+	width: 75%و
+margin: auto;
+    margin-top: auto;
+text-align: right;
+margin-top: 60px;
+font-size: 16px;
+color: white;
+margin-right: 10px;
+padding: 0px 10px;
+font-family: 'Cairo', sans-serif;
+margin-right: 9%;
+
+}
+.message a{
+	text-decoration: none;
+	padding: 5px 15px;
+	
+	color: #409090;
+	
+	font-size: 14px;
+	font-weight: bolder;
+	display: inline-block;
+    text-align: center;
+    cursor: pointer;
+font-family: 'Cairo', sans-serif;
+
+margin-left: 50px;
+margin-top: 30px;
+border-radius: 5px;
+display: block;
+text-align: right;
+margin: 0px;
+padding: 0px;
+margin: auto;
+float: right;
+margin-right: 10%;
+margin-top: 30px;
+}
+.message a:hover{
+	color: #ff8400;
+}

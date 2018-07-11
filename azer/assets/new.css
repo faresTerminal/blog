@@ -1,0 +1,448 @@
+*{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+body{
+	background-color: #3b687a;
+	margin: 0px;
+	padding: 0px;
+	font-family: 'Cairo', sans-serif;
+
+
+}
+label{
+
+	display: block;
+	color: #fff;
+}
+
+.container{
+	width: 98%;
+	
+
+	margin: auto;
+}
+.navbar{
+	width: 100%;
+	height:  160px;
+	background-color: #2c4754;
+}
+.navbar .logo{
+	    width: 100%;
+       display: block;
+       text-align: center;
+       
+       padding: 20px;
+       height: 108px;
+}
+.navbar .logo h2{
+	
+	font-family: 'Cairo', sans-serif;
+	font-size: 40px;
+color: white;
+}
+.navbar .logo h3{
+	font-family: 'Cairo', sans-serif;
+	margin-top: -26px;
+font-size: 16px;
+margin-right: 16px;
+color: #cccb4d;
+}
+
+.navbar .logo h2 i{
+      color: #ff8400;
+}
+
+.navbar .user{
+	width: 100%;
+    
+    text-align: left;
+    margin-left:  40px;  
+    padding-top: 0px;
+    float: right;
+    
+}
+.user ul{
+	
+	background: linear-gradient(#2c4754,#3b687a);
+width: 22%;
+height: 196px;
+text-align: right;
+margin-top: 0px;
+font-size: 15px;
+padding: 5px;
+margin-left: -40px;
+border-radius: 0px 0px 10px 10px;
+padding-right: 10px;
+position: absolute;
+display: none;
+margin-left: 20px;
+}
+
+.user ul li{
+	list-style: none;
+}
+.user  h3{
+	font-family: 'Cairo', sans-serif;
+	color: white;
+font-size: 18px;
+margin-left: 160px;
+cursor: pointer;
+
+}
+#left{
+      color: #ff8400;
+      margin-left: 5px;
+}
+#down{
+	
+	  color: #ff8400;
+	  padding: 0px;
+	  margin: 0px;
+	  display: none;
+	  margin-left: 10px;
+
+	
+}
+.user ul li h4{
+	font-family: 'Cairo', sans-serif;
+	color: white;
+	font-size: 14px;
+	    
+
+}
+.span{
+	color: #cccb4d;
+	font-family: 'Cairo', sans-serif;
+	
+}
+.user ul li:last-child{
+	width: 100%;
+	text-align: center;
+	margin-top: 50px;
+}
+.user ul li a{
+	text-decoration: none;
+	color: white;
+	font-family: 'Cairo', sans-serif;
+	background-color: #2c4754;
+	border-radius: 10px;
+	padding: 5px 30px;
+	cursor: pointer;
+}
+.simditor{
+	position: relative;
+border: 1px solid #c9d8db;
+width: 95%;
+margin: auto;
+
+}
+.simditor-toolbar{
+	top: 0px;
+
+left: 170.6px;
+width: 100%;
+}
+.article{
+	width: 80%;
+height: auto;
+background-color: #2C4754;
+text-align: center;
+float: right;
+margin-right: 115px;
+margin-top: 40px;
+border-radius: 10px;
+margin-bottom: 100px;
+
+
+}
+.article h2{
+	font-size: 15px;
+    margin-bottom: 7px;
+    width: 88%;
+    text-align: right;
+    color: white;
+
+}
+.article input[type ='text']{
+	width: 74%;
+text-align: right;
+padding-right: 10px;
+height: 35px;
+border-radius: 5px;
+border: none;
+margin-bottom: 20px;
+
+}
+.article input[placeholder]{
+	font-size: 13px;
+	padding-right: 10px;
+	text-align: center;
+}
+.article input[type ='text']:hover{
+         box-shadow: 1px 0px 3px 1px #32a0c2;	
+}
+.article textarea{
+	width: 80%;
+height: 500px;
+text-align: right;
+padding: 10px;
+border: none;
+border-radius: 5px;
+margin-bottom: 20px;
+
+line-height: 35px;
+}
+.article textarea:hover{
+	box-shadow: 1px 0px 3px 1px #32a0c2;
+}
+.article input[type ='file']{
+	width: 100%;
+   text-align: center;
+   padding-right: 10px;
+   height: 25px;
+   border-radius: 5px;
+   border: none;
+   margin-bottom: 20px;
+   margin-bottom: 20px;
+   color: white;
+
+}
+.article input[type ='submit']{
+	width: 20%;
+text-align: center;
+
+height: 35px;
+border-radius: 8px;
+border: none;
+margin-bottom: 20px;
+margin-bottom: 20px;
+font-size: 18px;
+background-color: #3b687a;
+color: white;
+cursor: pointer;
+}
+.article h1{
+	font-size: 18px;
+background-color: #3b687a;
+text-align: center;
+width: 30%;
+display: inline-block;
+height: 40px;
+padding: 10px;
+border-radius: 7px;
+color: white;
+}
+.article h3{
+	font-size: 14px;
+	color: cornsilk;
+
+width: 61%;
+display: inherit;
+text-align: center;
+margin-left: 200px;
+height: 33px;
+padding: 10px;
+border-radius: 5px;
+margin-top: -15px;
+margin-bottom: 47px;
+
+}
+.article h4{
+	font-size: 15px;
+	color: navajowhite;
+}
+.article h4 span{
+	color: black;
+	font-size: 16px;
+	font-weight: bold;
+}
+button{
+	width: 10%;
+	float: right;
+	text-align: center;
+	background-color: #5F2850;
+	color: #fff;
+	border:none;
+
+	font-size: 10px;
+	padding: 5px 5px;
+	font-weight: bold;
+	border-radius: 10px;
+	margin-right: 30px;
+	
+
+	
+	
+	margin-bottom: 3px;
+}
+.yac a{
+	text-decoration: none;
+	color: #a7cb00;
+	font-family: 'Cairo', sans-serif;
+}
+
+
+.end{
+	float: left;
+	text-align: center;
+	
+	
+	
+	
+	
+	
+	display: inline;
+	 width: 100%;
+	background-color: #2c4754;
+	
+	height: 60px;
+	
+}
+.end p{
+	color: white;
+	font-size: 13px;
+	font-family: 'Cairo', sans-serif;
+	text-align: center;
+
+}
+.end span{
+	color: #a7cb00;
+	font-size: 13px;
+	font-family: 'Cairo', sans-serif;
+}
+.paginator{
+margin-top: -60px;
+float: right;
+margin-right: 144px;
+}
+.sp1{
+	color: white;
+}
+.sp2 a{
+    text-decoration: none;
+    color: #b7cb00;
+    float: left;
+    margin-right: 12px;
+}
+.sp2 {
+   
+    color: white;
+}
+.sp3 {
+   
+    color: white;
+}
+.sp3 a{
+    text-decoration: none;
+    color: #b7cb00;
+    float: left;
+    margin-right: 12px;
+}
+
+span{
+	color: #cccb4d;
+}
+/* my framework*/
+.clearfix{
+	clear: both;
+}
+@media (max-width: 1108px) {
+	.container{
+		width: 99%;
+		margin:auto;
+	}
+	.navbar .logo h2{
+		font-size: 60px;
+	}
+	.navbar .logo h3{
+		font-size: 32px;
+	}
+	
+	.navbar{
+		height: 300px;
+	}
+	.article{
+		width: 98%;
+		margin:auto;
+		margin-top: 100px;
+		margin-bottom: 100px;
+		float: none;
+	}
+	.article h1{
+		font-size: 40px;
+		height: 80px;
+		width: 50%;
+		
+		
+	}
+	.article h3{
+		width: 98%;
+		font-size: 30px;
+		float: none;
+		margin-top: 50px;
+		margin-left: 0px;
+	}
+	.article h4{
+		font-size: 29px;
+		margin-top: 115px;
+	}
+
+	.article input[type ='text']{
+	    width: 98%;
+
+       height: 80px;
+       font-size: 30px;
+
+
+
+
+}
+.article input[placeholder]{
+	font-size: 30px;
+	
+}
+
+.article textarea{
+	width: 98%;
+
+}
+
+.article input[type ='file']{
+	width: 98%;
+   
+   height: 50px;
+  
+
+}
+.article input[type ='submit']{
+	width: 30%;
+text-align: center;
+
+height: 60px;
+
+font-size: 30px;
+
+}
+.end p{
+     	font-size: 35px;
+     }
+     .end{
+     	height: 120px;
+     }
+     .yac a{
+     	font-size: 28px;
+     }
+
+
+}
+
+@media (min-width: 992px){
+	
+	
+}
+@media (min-width: 1200px){
+	
+	
+}

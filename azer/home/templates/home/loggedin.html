@@ -1,0 +1,216 @@
+{% load static from staticfiles %}
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'loggedin124.css' %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'normalize.css">
+
+
+     <script type="text/javascript" src="{% static 'jquery-3.3.1.js' %}"></script>
+    
+    <script type="text/javascript" src="{% static 'myscript4.js' %}"></script>
+</head>
+<body>
+  <div class="container">
+    
+      
+      	<div class="navbar"> 
+      		
+      		<div id="user" >
+      			<h3><i class="fas fa-bars"></i></h3>
+      			<ul id="user_list" >
+              
+               <li>
+                
+                <img src="{{ user.profile_picture.url }}">
+
+              
+              </li>
+              
+      				<li>
+      					<h4><span class="span"> {{full_name}} </span> :اسم المستخدم </h4>
+      					
+      				</li>
+      			
+             
+      				<li>
+      					<a href="/">تسجيل الخروج</a>
+                 <a href="/loggedin/profile/">حسابي</a>
+      					
+      				</li>
+            
+      				
+      			</ul>
+      			
+      		</div>
+      		<div class="logo">
+      			<h2>فضاء الطالب <i class="fas fa-book-open"></i></h2>
+      			<h3>إطلبوا العلمَ لذاتِ العلمِ لا … لشهاداتٍ وآرا بٍ أخرْ</h3>
+            
+            
+      			
+      		</div>
+         
+      		
+      	</div>
+         
+      	
+      
+
+      
+      	<div class="p">
+      		<p> في حالة وجود أي مواضيع مخالفة من قبل الأعضاء, يرجى الإبلاغ عنها فورا من خلال النافذة الموجودة في اسفل الصفحة الرئيسية</p>
+      		
+      	
+          {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div class="msg">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}   
+         
+        <div class="container">
+          <div class="so1">
+            <h5>Advertising</h5>
+            
+          </div>
+          
+        </div>
+
+        <!-- to get search div -->
+        <div class="search">
+           
+              <form action="" method="GET">
+              <i class="fas fa-search"></i> <input type="submit" name="" value="إبحث" >
+              <input type="text" name="q" placeholder="أكتب كلمة البحث">
+              
+              </form>
+           
+            
+          </div>
+         
+          <!-- End search div -->
+      
+      	<div class="h1">
+      		<h1>اهلا وسهلا بك في موقع خاص بإدارة الموارد البشرية</h1>
+      		
+      	</div>
+       
+        <div class="container">
+          <div class="so">
+            
+            <div class="fast">
+              <h1>الوصول السريع</h1>
+              <ul>
+                
+                <h2> تصفح صفحة المجموعة على موقع الفيسبوك<br/>جامعة البليدة 2 -علي لونيسي </h2> 
+                <li><a href="http://www.facebook.com/groups/258313977897762">GRH السنة الأولى ماستر </a></li>
+                <li><a href="http://www.facebook.com/groups/master2GRH">GRH السنة الثانية ماستر </a></li>
+                <li><a href="http://www.facebook.com/affichage.gestion">....صفحة علوم التسيير </a></li>
+              </ul>
+              
+            </div>
+
+            <div class="adv1">
+              <h1>مساحة اعلامية</h1>
+              
+            </div>
+            
+          </div>
+          
+        </div>
+      
+
+      	
+     <!-- create publish header -->
+     <div class="container">
+     	<div class='header'>
+     		<a class="lnk" href="/loggedin/create"><i class="far fa-file-alt"></i> موضوع جديد</a>
+        <a class="lnk" href="/loggedin/prvc"><i class="fas fa-universal-access"></i> صفحة الخصوصية</a>
+     		{% for article in articles %}
+     		<div class="list">
+     		<ul>
+        
+     			<li id="i1">
+            
+            <img src="{{ article.avatar.profile_picture.url }}">
+            
+          </li>
+        
+          
+     			
+     			<li id="i2"><h1><a class="lnk1" href="article/{{article.id}}">{{ article.snippet}}</a> </h1></li>
+     			<li id="i3"><h1> <span class="span1">{{ article.auther }}</span></h1></li>
+     			<li id="i4"><h1><span class="span1">{{ article.date }}</span>تاريخ النشر </h1></li>
+     		</ul>
+     	</div>
+     	{% endfor %}
+
+
+     	</div>
+     	
+     </div>
+
+
+     <!-- create paginator -->
+     <div class="paginator">
+          <span class="sp1">
+            <span class="sp2">
+          
+          {% if  articles.has_next %}
+            <a href="?page={{  articles.next_page_number }}&q={{request.GET.q}}">التالي ....</a>
+            </span>
+            {% endif %}
+            
+           الصفحة  {{  articles.number}} من {{  articles.paginator.num_pages}}
+            
+            <span class="sp3">
+            {% if  articles.has_previous %}
+               
+               <a href="?page={{  articles.previous_page_number }}&q={{request.GET.q}}">السابقة ....</a>
+            {% endif %}
+            </span>
+           </span> 
+
+        </div>
+          <div class="top_footer>">
+       <i id="top" class="fas fa-chevron-circle-up"></i>
+       </div>
+
+     <!-- create sub paragraph -->
+
+     <div class="sub-p">
+     	<p> المشاركات المنشورة تعبر عن وجهة نظر صاحبها, فإدارة الموقع لا دخل لها بأي شكل من الأشكال</p>
+
+     </div>
+
+<!-- create small footer -->
+     <div class="end">
+
+                
+              <p>
+                    
+                   Université , Algerie | Assisté par un <span class="yac"><a href="http://www.facebook.com/django.756859"> étudiant </a>  </span> <span> GRH </span> <i class="fab fa-facebook-square"></i>  Copyright &copy; 2018</p>
+
+
+
+            </div>
+          </div>
+
+
+
+
+
+
+
+</body>
+</html>

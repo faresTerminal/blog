@@ -1,0 +1,174 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Profile</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'new_profile.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'normalize.css' %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet"> 
+	<script type="text/javascript" src="{% static 'jquery-3.3.1.js' %}"></script>
+    <script type="text/javascript" src="{% static 'myscript2.js' %}"></script>
+</head>
+<body>
+ {% block profile %}     
+    <!-- container -->
+    <div class="container">
+    <!-- parent div -->	
+	<div class="parent">
+
+		<!-- create image profile div -->
+		
+		<div class="image">
+			
+			<img src="{{user.profile_covertur.url}}">
+		    
+			<ul>
+				<li> <img src="{{ user.profile_picture.url }}"></li>
+				<li><h1>{{ user.name }}</h1></li>
+			</ul> 
+			<h2>Bio</h2>
+			<h2> {{ user.details }}</h2>
+			
+		</div>
+		<!-- end image div -->
+
+
+		<!-- create new div -->
+		<div class=" more">
+			<ul class="first_list">
+			<li>
+			<div class="about_me">
+				<h4>about me</h4>
+				<ul>
+					<li><h3>Username: <span>{{ user.name }}</span></h3></li>
+					<li><h3>Email: <span>{{ user.name.email }}</span></h3></li>
+					<li><h3>joined: <span>{{user.name.date_joined}}</span></h3></li>
+					<li><h3>last login: <span>{{user.name.last_login}}</span></h3></li>
+				</ul>
+				
+			</div>
+		    </li>
+		    <li>
+			<div class="add_more">
+				<h4>add More</h4>
+				 <div class="more_button">
+				 	<h2>add more here</h2>
+				 	
+				 </div>
+				 <form class="info" action="/loggedin/profile/more_info/" method="post">{% csrf_token %}
+				 	<li><h3>first name: <input type="text" name="firstname"></h3></li>
+				 	<li><h3>last name: <input type="text" name="lastname"></h3></li>
+				 	<li><h3>age: <input type="text" name="age"></h3></li>
+				 	<li><h3>section: <input type="text" name="section"></h3></li>
+				 	<li><h3>level: <input type="text" name="level"></h3></li>
+				 	
+				 
+				   <div class="save">
+
+				 	<input type="submit" name="" value="Save">
+				    </div>
+				  </form>
+				  <ul class="show_info">
+				  	<li><h3>first name: <span>{{ user1.firstname }}</span></h3></li>
+				 	<li><h3>last name: <span>fares yacine</span></h3></li>
+				 	<li><h3>age: <span>fares yacine</span></h3></li>
+				 	<li><h3>section: <span>fares yacine</span></h3></li>
+				 	<li><h3>level: <span>{{ user1.level }}</span></h3></li>
+				  	
+				  </ul>
+
+				
+			</div>
+		    </li>
+		    <li>
+			<div class="edit">
+				<h6>change password</h6>
+				 <div class="more_button1">
+				 	<h2>change password</h2>
+				 	
+				 </div>
+				<ul class="pass">
+					<li><h3>old password </h3><input type="password" name=""></li>
+				 	<li><h3>new password </h3><input type="password" name=""></li>
+				 	<li><h3>confirm password </h3><input type="password" name=""></li>
+				 	<div class="save">
+
+				 	<input type="submit" name="" value="Save">
+				    </div>
+
+					
+				</ul>
+
+				
+			</div>
+	    	</li>
+
+	     	</ul>
+			
+		</div>
+		<!-- end More -->
+
+	</div>
+	<!-- end parent div -->
+
+	</div>
+	<!-- end container-->
+{% endblock %}
+
+	 <div class="container">
+        <div class="sigin1">
+
+            <div class="tit1">
+           
+            <i class="fas fa-newspaper"></i>
+              <h1>منشوراتي</h1>
+            </div>
+{% block content %}
+    {% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div >{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+            <ul class="ul">
+              <li>العنوان</li>
+              <li>تاريخ النشر</li>
+              <li>Action</li>
+            </ul>
+    {% for head in post %}
+            <div class="list">
+
+            <ul>
+                <li>{{ head.title}}</li>
+                <li>{{head.date}}</li>
+                <li><a href="delete/{{ head.id }}">Delete</a></li>
+              </ul>
+
+            </div>
+{% endfor %}
+
+          
+           
+        </div>
+           
+    </div>
+{% endblock %}   
+
+
+
+
+
+
+
+
+
+
+		
+	
+	
+
+</body>
+</html>

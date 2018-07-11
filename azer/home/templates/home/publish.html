@@ -1,0 +1,162 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>talib</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'your_publish15.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet"> 
+  <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet"> 
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet"> 
+    <link rel="stylesheet" type="text/css" href="{% static 'normalize.css">
+
+
+     <script type="text/javascript" src="{% static 'jquery-3.3.1.js' %}"></script>
+    
+    <script type="text/javascript" src="{% static 'myscript1.js' %}"></script>
+	
+ 
+</head>
+<body>
+
+	<div class="navbar"> 
+          
+          
+          <div class="logo">
+            <h2>فضاء الطالب <i class="fas fa-book-open"></i></h2>
+            <h3>إطلبوا العلمَ لذاتِ العلمِ لا … لشهاداتٍ وآرا بٍ أخرْ</h3>
+            
+          </div>
+          
+        </div>
+        
+	<!-- nav bare smaller -->
+      
+{% if messages %}
+    <div class="messages">
+        {% for message in messages %}
+        <div ><i class="far fa-check-circle"></i> {{ message }} </div>
+        {% endfor %}
+    </div>
+ 
+ 
+  {% if articles %}
+      
+       {% for article in articles %}  
+       <div class="container">
+        <div class="article">
+          <ul class="barre">
+            
+            <li> {{ article.title }}</li>
+            <li><a href="/loggedin/"> << الصفحة الرئسية </a></li>
+          </ul>
+          
+           <h3>:العنوان</h3>
+           
+           <h2> {{ article.title }}</h2>
+          
+           <div class="user_panel">
+
+          <h1>اسم المستخدم</h1>
+          <h2><span>{{ article.avatar.name }}</span></h2>
+          <h3>تاريخ النشر</h3>
+          <h2><span>{{ last_login }}</span></h2>
+          <img src="{{ article.avatar.profile_picture.url}}">
+          
+        </div>
+         <div class="user_panel_rsponsive">
+          <ul>
+            <li><h1>{{ article.avatar.name }}</h1></li>
+            <li><h1>{{ last_login }}</h1></li>
+            <li><img src="{{ article.avatar.profile_picture.url}}"></li>
+          </ul>
+
+          
+        </div>
+            
+            <h3>:الرسالة</h3>
+          <div class="body">
+
+            {{ article.body|safe }}
+            <div class="attach">
+              
+            
+             <h3 class="tit_at">attachment || المرفقات</h3>
+            
+             
+           <a class="link_attachment" href="/media/{{ article.file}}">{{ article.file }}</a>
+           
+           
+           
+
+         </div>
+         
+
+
+
+          </div>
+         
+           
+          
+        </div>
+      </div>
+       {% endfor %}
+      {% else %}
+      
+    {% endif %}
+       {% for cf in add %} 
+        <div class="container">  
+        <div class="article1">
+          
+           
+           
+           <div class="user_panel1">
+
+          <h1>اسم المستخدم</h1>
+          <h2><span>{{ cf.user_comment }}</span></h2>
+          <h3>تاريخ النشر</h3>
+          <h2><span>{{ cf.date }}</span></h2>
+          <img src="{{ cf.avatar_commenter.profile_picture.url}}">
+          
+         </div>
+          <div class="user_panel_rsponsive1">
+          <ul>
+            <li><h1> {{ cf.user_comment }}</h1></li>
+            <li><h1>{{ cf.date }}</h1></li>
+            <li><img src="{{ cf.avatar_commenter.profile_picture.url}}"></li>
+          </ul>
+
+          
+        </div>
+         <div class="body_comment">
+            
+           {{ cf.comment }}
+         </div>
+            
+        </div>
+      </div>
+        {% endfor %}
+      {% endif %} 
+       
+  
+
+
+            <div class="end">
+                
+                <p>
+                    
+                   Blida 2 Université , Algerie | Assisté par un <span class="yac"><a href="http://www.facebook.com/kind.hearted.756859">étudiant</a>  </span> <span>GRH</span> ,       Copyright &copy; 2018</p>
+
+
+                
+                
+
+
+                
+                
+            </div>
+            
+</body>
+</html>    

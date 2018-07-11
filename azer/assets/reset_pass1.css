@@ -1,0 +1,160 @@
+*{
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	box-sizing:border-box;
+}
+body{
+	background-color: #f2f2f2;
+	padding: 0px;
+    margin: 0px;
+    font-family: 'Cairo', sans-serif;
+
+}
+.container{
+	width: 1197px;
+	
+
+	margin: auto;
+}
+.logo{
+	width: 100%;
+	background-color: #f2f2f2;
+	border-bottom: 1px #409090 solid;
+	height: 148px;
+	
+	
+}
+.logo h1{
+	color: #242222;
+	text-align: center;
+	margin: auto;
+	font-size: 45px;
+	font-family: 'Lalezar', cursive;
+
+}
+.logo h1 img{
+	width: 5%;
+height: 53px;
+margin-top: 12px;
+border-radius: 100%;
+
+}
+.logo h2{
+	color: #409090;
+	font-size: 18px;
+	margin: auto;
+	text-align: center;
+	font-family: 'Cairo', sans-serif;
+	margin-top: -14px;
+margin-right: -100px;
+}
+.email{
+	width: 80%;
+height: auto;
+padding: 10px;
+
+margin-top: 5%;
+margin: auto;
+    
+margin-top: 5%;
+}
+.email h1{
+	width: 100%;
+	font-size: 19px;
+	text-align: center;
+	margin-right: 10px;
+	color: black;
+}
+.email .config{
+	padding: 0;
+width: 70%;
+box-shadow: 1px 1px 8px 1px #409090;
+margin: auto;
+height: auto;
+padding: 5px;
+}
+.email .config li{
+	list-style: none;
+display: block;
+width: 80%;
+margin: auto;
+    margin-bottom: auto;
+margin-bottom: 3%;
+text-align: right;
+}
+.email .config li h2{
+	font-size: 16px;
+text-align: right;
+color: #5a5757;
+}
+.email .config li input[type='text']{
+	width: 80%;
+height: 40px;
+border: none;
+box-shadow: 1px 1px 10px 1px #ccc;
+border-radius: 1px;
+margin: auto;
+padding: 0px 9px;
+font-size: 17px;
+}
+.email .config li input[type='password']{
+	width: 80%;
+height: 40px;
+border: none;
+box-shadow: 1px 1px 10px 1px #ccc;
+border-radius: 1px;
+margin: auto;
+padding: 0px 9px;
+font-size: 17px;
+}
+
+.email .config li input[type='submit']{
+	width: 35%;
+height: 40px;
+border: none;
+
+border-radius: 1px;
+margin: auto;
+background-color: #409090;
+font-size: 18px;
+border-radius: 5px;
+border: none;
+color: #fff;
+cursor: pointer;
+
+}
+.yac a{
+	text-decoration: none;
+	color: #ff8400;
+}
+
+
+.end{
+	float: left;
+	text-align: center;
+	
+	
+	
+	display: inline;
+	 width: 100%;
+	background-color: #fff;
+	
+	height: 60px;
+	margin-top: 10%;
+	
+}
+.end p{
+	color: #409090;
+	font-size: 13px;
+
+}
+.end span{
+	color: #ff8400;
+	font-size: 13px;
+}
+
+
+/* my framework*/
+.clearfix{
+	clear: both;
+}

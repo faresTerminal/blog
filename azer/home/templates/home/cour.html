@@ -1,0 +1,150 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>صفحة دروس و بحوث ماستر 1</title>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="{% static 'cour45.css' %}">
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Cairo" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css?family=Lalezar" rel="stylesheet"> 
+	
+	
+</head>
+<body>
+
+	<div class="navbar"> 
+          
+          <div class="logo">
+            <h2>مركز التحميل <i class="fas fa-upload"></i></h2>
+            <h3>السنة أولى ماستر</h3>
+            
+          </div>
+          
+  </div>
+    
+	<!-- nav bare smaller -->
+     {% block content %}   
+    <div class="path">
+        <h3>GRH دروس السنة أولى ماستر </h3>
+         <ul>
+            <li>
+                <h2>المقياس</h2>
+            </li>
+            <li>
+                <h2>عنوان الملف</h2>
+            </li>
+            <li>
+                <h2>التحميل</h2>
+            </li>
+        </ul>
+        {% for ad in add %}
+        <ul>
+            <li>
+                <h1>{{ ad.title }}</h1>
+            </li>
+            <li>
+                <h1>{{ ad.sub_title }}</h1>
+            </li>
+            <li>
+                <a href="/media/{{ ad.file }}">تحميل الملف</a>
+            </li>
+        </ul>
+        {% endfor %}
+        
+        
+    </div>
+    <div class="paginator">
+          <span class="sp1">
+            <span class="sp2">
+          
+          {% if  add.has_next %}
+            <a href="?page={{  add.next_page_number }}">التالي ....</a>
+            </span>
+            {% endif %}
+            
+           الصفحة  {{  add.number}} من {{  add.paginator.num_pages}}
+            
+            <span class="sp3">
+            {% if  add.has_previous %}
+               
+               <a href="?page={{  add.previous_page_number }}">السابقة ....</a>
+            {% endif %}
+            </span>
+           </span> 
+        </div>
+        <hr>
+
+     <div class="path">
+        <h3>GRH بحوث السنة أولى ماستر </h3>
+         <ul>
+            <li>
+                <h2>المقياس</h2>
+            </li>
+            <li>
+                <h2>عنوان البحث</h2>
+            </li>
+            <li>
+                <h2>التحميل</h2>
+            </li>
+        </ul>
+        {% for ads in add_s1 %}
+        <ul>
+            <li>
+                <h1>{{ ads.title_cherche_s1 }}</h1>
+            </li>
+            <li>
+                <h1>{{ ads.sub_title_cherche_s1 }}</h1>
+            </li>
+            <li>
+                <a href="/media/{{ ads.file_s1 }}">تحميل الملف</a>
+            </li>
+        </ul>
+
+        {% endfor %}
+         
+        
+
+    </div>
+    <div class="paginator">
+          <span class="sp1">
+            <span class="sp2">
+          
+          {% if  add_s1.has_next %}
+            <a href="?page1={{  add_s1.next_page_number }}">التالي ....</a>
+            </span>
+            {% endif %}
+            
+           الصفحة  {{  add_s1.number}} من {{  add_s1.paginator.num_pages}}
+            
+            <span class="sp3">
+            {% if  add_s1.has_previous %}
+               
+               <a href="?page1={{  add_s1.previous_page_number }}">السابقة ....</a>
+            {% endif %}
+            </span>
+           </span> 
+        </div>
+        <hr>
+
+    	
+    {% endblock %} 
+     <!-- footer -->
+
+            <div class="end">
+                
+                <p>
+                    
+                   Blida 2 Université , Algerie | Assisté par un <span class="yac"><a href="http://www.facebook.com/kind.hearted.756859">étudiant</a>  </span> <span>GRH</span> ,       Copyright &copy; 2018</p>
+
+
+                
+            </div>
+            
+    
+        
+    
+
+
+</body>
+</html>
